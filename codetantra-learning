@@ -1,0 +1,68 @@
+1)
+The setbase() manipulator sets the basefield as one of the possible values hex, oct or dec.
+
+The setbase() manipulator is used to define the base of the numeral value of a variable.
+
+The prototype of setbase() manipulator is defined in the iomanip header file and it should be include in user program.
+
+The common base converters are:
+
+dec - decimal base (base - 10)
+oct - octal base (base - 8)
+hex - hexadecimal base (base - 16)
+
+The format of setbase() is
+
+setbase(base);
+
+Let us consider an example:
+
+cout << setbase(16) << 15 << endl; // it prints f
+
+
+2) setprecision()
+
+Setprecision when used along with ‘fixed’ provides precision to floating-point numbers correct to decimal numbers mentioned in the brackets of the setprecison. 
+It is defined in header file <iomanip>.
+
+3) The ws() manipulator is used to ignore the leading white space characters that precedes the given input.
+
+4)The setiosflags() manipulator sets the format flags specified by parameter.
+
+The format of setiosflags() is:
+
+setiosflags(ios_base::fmtflags mask); // mask is the parameter which represents different format flags
+
+5)In C++ user can define and use manipulator similar to built in manipulators as per the user's used and desire to control the format of input and output.
+
+Similar to the predefined built manipulators use can define non-parameterized as well as parameterized manipulators.
+
+The syntax for designing manipulator is:
+
+ostream & manipulator_name(ostream &ostrObj) {
+	set of statements;
+	return ostrObj;
+}
+
+Here manipulator_name is the user defined manipulator name, it will receive and returns the ostream object.
+
+Let us consider an example:
+
+#include <iostream>
+
+#include <iomanip>
+
+using  namespace std;
+ostream & tab(ostream &osObj) { // Defining user defined manipulator tab
+	osObj << "\t";
+	return osObj;
+}
+int main() {
+	cout << "Code" << tab <<"Tantra" << tab <<"Software" << endl; // Call is made to the manipulator tab
+}
+
+The above code prints the output as Code Tantra Software.
+
+
+
+6)
